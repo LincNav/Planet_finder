@@ -1,73 +1,122 @@
 body {
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
   
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Updated */
   }
   
   h1 {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    left: 0; /* Added */
+    right: 0; /* Added */
+  }
+
+  footer p {
     margin: 0;
   }
   
-  main {
-    flex: 1;
-    padding: 20px;
-  }
-  
   .search-container {
-    margin-bottom: 20px;
-  }
-  
-  #search-input {
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-  }
-  
-  #autocomplete-results {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-  }
-  
-  .autocomplete ul li:hover {
-    cursor: pointer;
-  }
-  #planet-info {
+    position: relative;
     margin-top: 20px;
   }
   
-  footer {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    margin-top: auto;
+  #search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Media Queries */
-  @media (min-width: 768px) {
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  #search-input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
   
-    #planet-info {
-      margin-top: 0;
-      margin-left: 20px;
-    }
+  
+  .autocomplete-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+  }
+  
+  .planet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .planet-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .planet-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .planet-data {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .planet-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .planet-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .planet-info {
+    margin-left: 20px;
+  }
+  
+  .planet-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .planet-info p {
+    font-size: 16px;
+    margin: 5px 0;
   }
   
